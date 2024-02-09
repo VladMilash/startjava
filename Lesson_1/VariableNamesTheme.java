@@ -1,67 +1,66 @@
 public class VariableNamesTheme {
     public static void main(String[] args) {
-        
         System.out.println("1. Разные переменные");
 
         //цифра
-        byte number = 1;
+        int number = 1;
         System.out.println(number);
 
         //сумма чисел
-        byte sumNum = 1+1;
-        System.out.println(sumNum);
+        int sumNumber = 1 + 1;
+        System.out.println(sumNumber);
 
         //произведение цифр
-        byte prodNum = 1*3;
-        System.out.println(prodNum);
+        int productNumber = 1 * 3;
+        System.out.println(productNumber);
 
         //максимальное число
-        byte maxNum = 127;
-        System.out.println(maxNum);
+        int maximumNumber = 127;
+        System.out.println(maximumNumber);
 
         //количество десятков
-        byte numTens = 10/10;
-        System.out.println(numTens);
+        int tensNumber = 10 / 10;
+        System.out.println(tensNumber);
 
         //вес собаки
-        byte weightDog = 10;
-        System.out.println(weightDog);
+        int dogWeight = 10;
+        System.out.println(dogWeight);
 
         //исходное число
-        byte origNum = 5;
-        System.out.println(origNum);
+        int originalNumber = 5;
+        System.out.println(originalNumber);
 
         //процент по вкладу
-        byte percDep = 10;
-        System.out.println(percDep);
+        int depositPercent = 10;
+        System.out.println(depositPercent);
 
         //(переменная хранит символ) &
-        char sym = '&';
-        System.out.println(sym);
+        char symbol = '&';
+        System.out.println(symbol);
 
         //код ощибки
         int errorCode = 999;
         System.out.println(errorCode);
 
         //тип сообщения
-        char messType = 'm';
-        System.out.println(messType);
+        char messageType = 'm';
+        System.out.println(messageType);
 
         //число нулей
-        int numZeros = 0;
-        System.out.println(numZeros);
+        int zerosNumber = 0;
+        System.out.println(zerosNumber);
 
         //уникальное число
-        int uniqueNum = 8965;
-        System.out.println(uniqueNum);
+        int uniqueNumber = 8965;
+        System.out.println(uniqueNumber);
 
         //случайное число
-        int ranNum = 323232;
-        System.out.println(ranNum);
+        int randomNumber = 323232;
+        System.out.println(randomNumber);
 
         //математическое выражение
-        int mathExpr = 256+456;
-        System.out.println(mathExpr);
+        int mathematicalExpression = 256 + 456;
+        System.out.println(mathematicalExpression);
 
         //выбор (чего-либо)
         int choice = 454;
@@ -72,16 +71,16 @@ public class VariableNamesTheme {
         System.out.println(score);
 
         //максимальная длина (строки)
-        Byte maxLength = 100;
-        System.out.println(maxLength);
+        Byte maximumLength = 100;
+        System.out.println(maximumLength);
 
         //пункт меню
         char menuItem = 'R';
         System.out.println(menuItem);
 
         //стоимость кофе на вынос
-        int costCoffeeGo = 200;
-        System.out.println(costCoffeeGo);
+        int costCoffeeTakeAway = 200;
+        System.out.println(costCoffeeTakeAway);
 
         //дата начала (чего-либо)
         float starDate = 11.11f;
@@ -92,8 +91,8 @@ public class VariableNamesTheme {
         System.out.println(endRange);
 
         //полное имя работника месяца
-        char fullNameEmpMonth= 'H';
-        System.out.println(fullNameEmpMonth);
+        char fullNameEmployeeMonth= 'H';
+        System.out.println(fullNameEmployeeMonth);
 
         //заголовок электронной книги
         char ebookTitle = 'G';
@@ -112,80 +111,80 @@ public class VariableNamesTheme {
         System.out.println(counter);
 
         //путь до файла
-        char pathToFile = '|';
-        System.out.println(pathToFile);
+        char pathFile = '|';
+        System.out.println(pathFile);
 
         //количество чисел в каждой строке
-        int numOfNumEachLine = 56565;
-        System.out.println(numOfNumEachLine);
+        int numberNumnersEachRow = 56565;
+        System.out.println(numberNumnersEachRow);
 
         System.out.println("\n2. boolean-переменные");
 
         //сотни равны?
-        boolean equals = false;
-        System.out.println(equals);
+        boolean isEquals = false;
+        System.out.println(isEquals);
 
         //компьютер включен?
-        boolean working = true;
-        System.out.println(working);
+        boolean isworking = true;
+        System.out.println(isworking);
 
         //есть равные цифры?
-        boolean theSame = true;
-        System.out.println(theSame);
+        boolean hasSame = true;
+        System.out.println(hasSame);
 
         //(что-либо) создано?
-        boolean created = true;
-        System.out.println(created);
+        boolean isCreated = true;
+        System.out.println(isCreated);
 
         //(что-либо) пустое?
-        boolean empty = false;
-        System.out.println(empty);
+        boolean isEmpty = true;
+        System.out.println(isEmpty);
 
         //(что-либо) активное?
-        boolean aktive = true;
-        System.out.println(aktive);
+        boolean isAktive = true;
+        System.out.println(isAktive);
 
         //новый?
-        boolean new1 = true;
-        System.out.println(new1);
+        boolean isNew = true;
+        System.out.println(isNew);
 
         //электронная почта действительная?
-        boolean mail = true;
-        System.out.println(new1);
+        boolean isValid = true;
+        System.out.println(isValid);
 
         //имеются уникальные строки?
-        boolean valid = false;
-        System.out.println(valid);
+        boolean hasUnique = false;
+        System.out.println(hasUnique);
 
         System.out.println("\n3. Аббревиатуры");
 
         //старый universally unique identifier
-        String cuui = "cuui";
-        System.out.println(cuui);
+        int uuiOld = 555;
+        System.out.println(uuiOld);
 
         //производитель оперативной памяти
-        String pop ="opp";
-        System.out.println(pop);
+        String ramManufacturer ="microsoft";
+        System.out.println(ramManufacturer);
 
         //емкость жесткого диска
-        String egd = "egd";
-        System.out.println(egd);
+        int hdCapacity = 128;
+        System.out.println(hdCapacity);
 
         //протокол передачи гипертекста
-        String ppg = "ppg";
-        System.out.println(ppg);
+        int http = 44;
+        System.out.println(http);
 
         //сокращенный uniform resource locator
-        String curl = "curl";
-        System.out.println(curl);
+        String urlAbbreviated = "mv.com";
+        System.out.println(urlAbbreviated);
 
         //новый идентификатор клиента
-        String nuk = "nuk";
-        System.out.println(nuk);
+        int idClientNew = 1212;
+        System.out.println(idClientNew);
 
         //кодировка american standard code for information interchange
-        String kascfii = "kascfii";
-        System.out.println(kascfii);
+        int asciiCode = 121212;
+        System.out.println(asciiCode);
     }
 
 }
