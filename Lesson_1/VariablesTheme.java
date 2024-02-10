@@ -19,8 +19,8 @@ public class VariablesTheme {
         System.out.println("Вес, кг: " + weight);
         double frequency = 2.5d;
         System.out.println("Частота процессора, ГГц: " + frequency);
-        boolean touchCreen = false;
-        System.out.println("Сенсорный экран: " + touchCreen);
+        boolean hasTouchCreen = false;
+        System.out.println("Сенсорный экран: " + hasTouchCreen);
 
         System.out.println("\n2. Расчет стоимости товара со скидкой");
         int prisePen = 100;
@@ -77,21 +77,19 @@ public class VariablesTheme {
         m = n;
         n = temp;
         System.out.println("\nm=" + m + " n=" + n);
-        
         System.out.println("\nC помощью арифметических операций:");
         System.out.println("\nm=" + m + " n=" + n);
         m = m + n;
         n = m - n;
         m = m - n;
         System.out.println("\nm=" + m + " n=" + n);
-
         System.out.println("\nC помощью побитовой операции ^:");
         System.out.println("\nm=" + m + " n=" + n);
         m = m ^ n;
         n = n ^ m;
         m = m ^ n;
         System.out.println("\nm=" + m + " n=" + n);
-
+        
         System.out.println("\n6. Вывод символов и их кодов");
         int codVariable1 = 36;
         int codVariable2 = 42;
@@ -129,12 +127,10 @@ public class VariablesTheme {
         int hundreds = k / 100;
         int dozens = k / 10;
         int units = k / 1;
-
-        System.out.println("Число K содержит:");
+        System.out.println("Число " + k + " содержит:");
         System.out.println("  " + "сотен - " + hundreds);
         System.out.println("  " + "десятков - " + dozens);
         System.out.println("  " + "единиц - " + units);
-
         int boofer;
         int summaK;
         boofer = k % 10;
@@ -145,7 +141,6 @@ public class VariablesTheme {
         boofer = k / 10; 
         boofer = boofer / 10;
         summaK = summaK + boofer; 
-
         int boofer1;
         int compositionK;
         boofer1 = k % 10; 
@@ -156,7 +151,6 @@ public class VariablesTheme {
         boofer1 = k / 10;
         boofer1 = boofer1 / 10; 
         compositionK = compositionK + boofer1; 
-
         System.out.println("Сумма его цифр = " + summaK);
         System.out.println("Произведение = " + compositionK);
 
