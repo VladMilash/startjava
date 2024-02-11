@@ -20,7 +20,8 @@ public class Calculator {
                 for (int i = 1; i != b; i++) {
                     result *= a;
                 } 
-            } System.out.println(a + " " + sign + " " + b + " = " + result);
+            } 
+            System.out.println(a + " " + sign + " " + b + " = " + result);
         }    
     }
 }
