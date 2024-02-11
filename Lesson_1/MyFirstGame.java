@@ -1,20 +1,17 @@
 public class MyFirstGame {
     public static void main(String[] args) {
-        int computerNumber = 90;
-        int playerNumber = 100;
-        if (playerNumber > computerNumber) {
-            while (playerNumber != computerNumber) {
-                System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
-                playerNumber--;
-            }
-        } else if (playerNumber < computerNumber) {
-            while (playerNumber != computerNumber) {
+        int computerNumber = 5;
+        int playerNumber = 1;
+        while (computerNumber != playerNumber) {
+            if (computerNumber > playerNumber) {
                 System.out.println("Число " + playerNumber + " меньше того, что загадал компьютер");
                 playerNumber++;
             }
+            else if (computerNumber < playerNumber) {
+                System.out.println("Число " + playerNumber + " больше того, что загадал компьютер");
+                playerNumber--;
+            }
         }
-        if (playerNumber == computerNumber) {
-            System.out.println("Вы победили");
-        }
+        System.out.println("Вы победили");
     }
 }
