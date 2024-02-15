@@ -42,10 +42,9 @@ public class CyclesTheme {
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
         int originalNumber = 1234;
         int sumNumbers = 0;
-        int digit;
         System.out.print("Реверсивное число: ");
         while (originalNumber > 0) {
-            digit = originalNumber % 10;
+            int digit = originalNumber % 10;
             System.out.print(digit);  
             sumNumbers += digit; 
             originalNumber /= 10;
@@ -53,19 +52,19 @@ public class CyclesTheme {
         System.out.print(", cумма его чисел: " + sumNumbers);
 
         System.out.println("\n\n4. Вывод чисел в несколько строк");
-        int howDigits = 0;
+        int outputNumbers = 0;
         for (int i = 1; i < 24; i += 2) {
             System.out.printf("%2d ", i);
-            howDigits++;
-            if (howDigits % 5 == 0) {
+            outputNumbers++;
+            if (outputNumbers % 5 == 0) {
                 System.out.println();
             }
         }
-        int howZeros = 5 - (howDigits % 5);
-        if ((howZeros > 0) && (howZeros < 5)) {
-            while (howZeros > 0) {
+        int outputZeros = 5 - (outputNumbers % 5);
+        if ((outputZeros > 0) && (outputZeros < 5)) {
+            while (outputZeros > 0) {
                 System.out.printf("%2d ", 0);
-                howZeros--;
+                outputZeros--;
             }
         }    
 
@@ -87,7 +86,7 @@ public class CyclesTheme {
                     originalNumber + " нечетное количество двоек - " + numberTwos);
         }
 
-        System.out.println("\n6. Отображение геометричесих фигур");
+        System.out.println("\n6. Отображение геометрических фигур");
         int length = 10;
         for (int i = 5; i > 0; i--) {
             for (int j = 0; j <= length; j++) {
@@ -120,13 +119,13 @@ public class CyclesTheme {
                 outputLength++;
             } while (outputLength < outputHeight);
             System.out.println();
-            if ((outputHeight < height) && (isСountdown == false)) {
+            if ((outputHeight < height) && (!isСountdown)) {
                 outputHeight++;
                 outputLength = 0;
             } else {
                 isСountdown = true;
                 outputHeight--;
-                outputLength=0;
+                outputLength = 0;
             }
         } while (outputHeight > 0);
 
@@ -138,8 +137,7 @@ public class CyclesTheme {
             if ((i % 2 != 0) && (i <= 47)) {
                 System.out.printf("%4d%11s            %-1s%n", i, symbol1, Character.getName(i));
                 symbol1 += 2;
-            }
-            if ((i % 2 == 0) && (i >= 98)) {
+            } else if ((i % 2 == 0) && (i >= 98)) {
                 System.out.printf("%4d%11s            %-1s%n", i, symbol2, Character.getName(i));
                 symbol2 += 2;
             }
@@ -150,7 +148,7 @@ public class CyclesTheme {
         originalNumberCopy = originalNumber;
         int reverseNumber = 0;
         while (originalNumberCopy > 0) {
-            digit = originalNumberCopy % 10;
+            int digit = originalNumberCopy % 10;
             reverseNumber= (reverseNumber * 10) + digit;
             originalNumberCopy /= 10; 
         }
@@ -163,52 +161,39 @@ public class CyclesTheme {
         System.out.println("\n9. Проверка, является ли число счастливым");
         originalNumber = 555666;
         originalNumberCopy = originalNumber;
-        int sumNumber2 = 0;
-        int sumNumber1 = 0;
+        int sumLeftHalf = 0;
+        int sumRightHalf = 0;
         counter = 0;
-        int halfNumber1;
-        int halfNumber2;
-        halfNumber2 = originalNumber % 1000;
-        halfNumber1 = originalNumber / 1000;
+        int halfNumber2 = originalNumber % 1000;
+        int halfNumber1 = originalNumber / 1000;
         for (int i = 5; i >= 0; i--) {
             counter++;
             if (counter <= 3) {
-                sumNumber2 = sumNumber2 + (originalNumberCopy % 10);
-                originalNumberCopy /= 10;
+                sumLeftHalf += (originalNumberCopy % 10);
             } else {
-                sumNumber1 = sumNumber1 + (originalNumberCopy % 10);
-                originalNumberCopy /= 10;
+                sumRightHalf += (originalNumberCopy % 10);
             }
+            originalNumberCopy /= 10;
         }
-        if (sumNumber2 == sumNumber1) {
+        if (sumLeftHalf == sumRightHalf) {
             System.out.println("Число " + originalNumber + " является счастливым");
-            System.out.println("Сумма цифр " + halfNumber1 + " = " 
-                    + sumNumber1 + ", а сумма " + halfNumber2 + " = " + sumNumber2);
-        } else if (sumNumber2 != sumNumber1) {
+        } else if (sumLeftHalf != sumRightHalf) {
             System.out.println("Число " + originalNumber + " не является счастливым");
-            System.out.println("Сумма цифр " + halfNumber1 + " = " + sumNumber1 + ", а сумма " + 
-                    halfNumber2 + " = " + sumNumber2);
         }
+        System.out.println("Сумма цифр " + halfNumber1 + " = " + sumRightHalf + ", а сумма " + 
+                    halfNumber2 + " = " + sumLeftHalf);
 
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
-        int resultMultiplication;
-        for (int i = 1; i <= 9; i++) {
+        System.out.println("   |  2  3  4  5  6  7  8  9");
+        System.out.println(" ---------------------------");
+        for (int i = 2; i <= 9; i++) {
             for (int j = 1; j <= 9; j++) {
-                resultMultiplication = i * j;
-                if (resultMultiplication == 1) {
-                    System.out.print("   | ");
-                }
-                else {
-                System.out.printf("%2d ", resultMultiplication);
-                }
-                if((resultMultiplication > 1) && (resultMultiplication <=9) && (j == 1)) {
+                System.out.printf("%2d ", i * j);
+                if (j == 1) {
                     System.out.print("| ");
                 }
             }
-            System.out.print("\n");
-            if (i == 1) {
-                System.out.println(" ---------------------------");
-            }
-         }
+            System.out.println();
+        }    
     }
 }
