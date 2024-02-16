@@ -55,7 +55,6 @@ public class VariablesTheme {
         System.out.println(shortVariable);
         --shortVariable;
         System.out.println(shortVariable);
-
         int intVariable = 2147483647;
         System.out.println("\nint");
         System.out.println(intVariable);
@@ -63,7 +62,6 @@ public class VariablesTheme {
         System.out.println(intVariable);
         --intVariable;
         System.out.println(intVariable);
-
         long longVariable = 9223372036854775807l;
         System.out.println("\nlong");
         System.out.println(longVariable);
@@ -74,25 +72,25 @@ public class VariablesTheme {
 
         System.out.println("\n5. Перестановка значений переменных");
         System.out.println("\nС помощью третьей переменной:");
-        int variable1 = 2;
-        int variable2 = 5;
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
-        int variableTemp = variable1;
-        variable1 = variable2;
-        variable2 = variableTemp;
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
+        int a = 2;
+        int b = 5;
+        System.out.println("\na=" + a + " b=" + b);
+        int digit = a;
+        a = b;
+        b = digit;
+        System.out.println("\na=" + a + " b=" + b);
         System.out.println("\nC помощью арифметических операций:");
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
-        variable1 = variable1 + variable2;
-        variable2 = variable1 - variable2;
-        variable1 = variable1 - variable2;
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
+        System.out.println("\na=" + a + " b=" + b);
+        a += b;
+        b = a - b;
+        a -= b;
+        System.out.println("\na=" + a + " b=" + b);
         System.out.println("\nC помощью побитовой операции ^:");
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
-        variable1 = variable1 ^ variable2;
-        variable2 = variable2 ^ variable1;
-        variable1 = variable1 ^ variable2;
-        System.out.println("\nvariable1=" + variable1 + " variable2=" + variable2);
+        System.out.println("\na=" + a + " b=" + b);
+        a ^= b;
+        b ^= a;
+        a ^= b;
+        System.out.println("\na=" + a + " b=" + b);
         
         System.out.println("\n6. Вывод символов и их кодов");
         int codVariable1 = 36;
@@ -119,44 +117,36 @@ public class VariablesTheme {
         char symbolVariable10 = ')';
         System.out.println("    " + symbolVariable6 + symbolVariable7);
         System.out.println("   " + symbolVariable6 + "  " +  symbolVariable7);
-        System.out.println("  " + symbolVariable6 + symbolVariable8 + symbolVariable9 + " " 
-                + symbolVariable10 + symbolVariable7);
+        System.out.println("  " + symbolVariable6 + symbolVariable8 + symbolVariable9 + 
+                " " + symbolVariable10 + symbolVariable7);
         System.out.println(" " + symbolVariable6 + "      " + symbolVariable7);
-        System.out.println("" + symbolVariable6 + symbolVariable8 + symbolVariable8 
-                + symbolVariable8 + symbolVariable8 + symbolVariable6 + symbolVariable7 
-                + symbolVariable8 + symbolVariable8 + symbolVariable7);
+        System.out.println("" + symbolVariable6 + symbolVariable8 + symbolVariable8 + 
+                symbolVariable8 + symbolVariable8 + symbolVariable6 + 
+                symbolVariable7 + symbolVariable8 + symbolVariable8 + symbolVariable7);
 
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
-        int k = 123;
-        int hundreds = k / 100;
-        int dozens = k / 10;
-        int units = k / 1;
-        System.out.println("Число " + k + " содержит:");
+        int number = 123;
+        int hundreds = number / 100;
+        int dozens = number / 10;
+        int units = number / 1;
+        System.out.println("Число " + number + " содержит:");
         System.out.println("  " + "сотен - " + hundreds);
         System.out.println("  " + "десятков - " + dozens);
         System.out.println("  " + "единиц - " + units);
-        int boofer;
-        int summaK;
-        boofer = k % 10;
-        summaK = boofer; 
-        boofer = k / 10; 
-        boofer = boofer % 10; 
-        summaK = summaK + boofer; 
-        boofer = k / 10; 
-        boofer = boofer / 10;
-        summaK = summaK + boofer; 
-        int boofer1;
-        int compositionK;
-        boofer1 = k % 10; 
-        compositionK = boofer1; 
-        boofer1 = k / 10; 
-        boofer1 = boofer1 % 10; 
-        compositionK = compositionK + boofer1; 
-        boofer1 = k / 10;
-        boofer1 = boofer1 / 10; 
-        compositionK = compositionK + boofer1; 
-        System.out.println("Сумма его цифр = " + summaK);
-        System.out.println("Произведение = " + compositionK);
+        int sumNumber = 0;
+        int compositionNumber = 1;
+        digit = number % 10;
+        sumNumber += digit;
+        compositionNumber *= digit;
+        number /= 10;
+        digit = number % 10;
+        sumNumber += digit;
+        compositionNumber *= digit;
+        number /= 10; 
+        sumNumber += number;
+        compositionNumber *= number;
+        System.out.println("Сумма его цифр = " + sumNumber);
+        System.out.println("Произведение = " + compositionNumber);
 
         System.out.println("\n9. Вывод времени");
         float sec = 86399.0f;

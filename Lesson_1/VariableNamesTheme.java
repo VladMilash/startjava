@@ -15,8 +15,8 @@ public class VariableNamesTheme {
         System.out.println(productNumber);
 
         //максимальное число
-        int maximumNumber = 127;
-        System.out.println(maximumNumber);
+        int maxNumber = 127;
+        System.out.println(maxNumber);
 
         //количество десятков
         int tensNumber = 10 / 10;
@@ -59,8 +59,8 @@ public class VariableNamesTheme {
         System.out.println(randomNumber);
 
         //математическое выражение
-        int mathematicalExpression = 256 + 456;
-        System.out.println(mathematicalExpression);
+        int mathExpression = 256 + 456;
+        System.out.println(mathExpression);
 
         //выбор (чего-либо)
         int choice = 454;
@@ -71,8 +71,8 @@ public class VariableNamesTheme {
         System.out.println(score);
 
         //максимальная длина (строки)
-        Byte maximumLength = 100;
-        System.out.println(maximumLength);
+        Byte maxLength = 100;
+        System.out.println(maxLength);
 
         //пункт меню
         char menuItem = 'R';
@@ -91,8 +91,8 @@ public class VariableNamesTheme {
         System.out.println(endRange);
 
         //полное имя работника месяца
-        char fullNameEmployeeMonth= 'H';
-        System.out.println(fullNameEmployeeMonth);
+        char nameEmployeeMonth= 'H';
+        System.out.println(nameEmployeeMonth);
 
         //заголовок электронной книги
         char ebookTitle = 'G';
@@ -115,8 +115,8 @@ public class VariableNamesTheme {
         System.out.println(pathFile);
 
         //количество чисел в каждой строке
-        int numberNumnersEachRow = 56565;
-        System.out.println(numberNumnersEachRow);
+        int numbersEachRow = 56565;
+        System.out.println(numbersEachRow);
 
         System.out.println("\n2. boolean-переменные");
 
@@ -186,5 +186,4 @@ public class VariableNamesTheme {
         int asciiCode = 121212;
         System.out.println(asciiCode);
     }
-
 }
