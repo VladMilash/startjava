@@ -131,15 +131,11 @@ public class CyclesTheme {
 
         System.out.println("\n7. Отображение ASCII-символов");
         System.out.println("DECIMAL   " + "CHARACTER   " + "DESCRIPTION");
-        char symbol1 = 15;
-        char symbol2 = 98;
-        for (int i = 15; i <= 122; i++) {
-            if ((i % 2 != 0) && (i <= 47)) {
-                System.out.printf("%4d%11s            %-1s%n", i, symbol1, Character.getName(i));
-                symbol1 += 2;
-            } else if ((i % 2 == 0) && (i >= 98)) {
-                System.out.printf("%4d%11s            %-1s%n", i, symbol2, Character.getName(i));
-                symbol2 += 2;
+        for (char i = 15; i <= 122; i++) {
+            if ((i <= 47) && (i % 2 != 0)) {
+                System.out.printf("%4d%11s            %-1s%n", (int) i, i, Character.getName(i));
+            } else if ((i >= 98) && (i % 2 == 0)) {
+                System.out.printf("%4d%11s            %-1s%n", (int) i, i, Character.getName(i));
             }
         }
 
@@ -163,12 +159,10 @@ public class CyclesTheme {
         originalNumberCopy = originalNumber;
         int sumLeftHalf = 0;
         int sumRightHalf = 0;
-        counter = 0;
-        int halfNumber2 = originalNumber % 1000;
-        int halfNumber1 = originalNumber / 1000;
+        int leftHalfCopy = originalNumber % 1000;
+        int rightHalfCopy = originalNumber / 1000;
         for (int i = 5; i >= 0; i--) {
-            counter++;
-            if (counter <= 3) {
+            if (i >= 3) {
                 sumLeftHalf += (originalNumberCopy % 10);
             } else {
                 sumRightHalf += (originalNumberCopy % 10);
@@ -180,8 +174,8 @@ public class CyclesTheme {
         } else if (sumLeftHalf != sumRightHalf) {
             System.out.println("Число " + originalNumber + " не является счастливым");
         }
-        System.out.println("Сумма цифр " + halfNumber1 + " = " + sumRightHalf + ", а сумма " + 
-                    halfNumber2 + " = " + sumLeftHalf);
+        System.out.println("Сумма цифр " + rightHalfCopy + "=" + sumRightHalf + ", а сумма " + 
+                    leftHalfCopy + "=" + sumLeftHalf);
 
         System.out.println("\n10. Отображение таблицы умножения Пифагора");
         System.out.println("   |  2  3  4  5  6  7  8  9");
