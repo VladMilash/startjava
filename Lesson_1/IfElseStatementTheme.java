@@ -66,24 +66,24 @@ public class IfElseStatementTheme {
         a = 111;
         b = 111;
         int aHundreds = a / 100;
-        int aDozens = (a % 100) / 10;
-        int aUnits = a % 10;
+        int aTens = (a % 100) / 10;
+        int aOnes = a % 10;
         int bHundreds = b / 100;
-        int bDozens = (b % 100) / 10;
-        int bUnits = b % 10;
+        int bTens = (b % 100) / 10;
+        int bOnes = b % 10;
         System.out.print("Числа: " + a + ", " + b);
-        if ((aHundreds != bHundreds) && (aDozens != bDozens) && (aUnits != bUnits)) {
+        if ((aHundreds != bHundreds) && (aTens != bTens) && (aOnes != bOnes)) {
             System.out.print(" не имеют одинаковых цифр");
         } else {
-            System.out.println(" имеют одинковые цифры: ");
+            System.out.println(" имеют одинаковые цифры: ");
             if (aHundreds == bHundreds) {
                 System.out.println(aHundreds + " разряд-1 ");
             }
-            if (aDozens == bDozens) {
-                System.out.println(aDozens + " разряд-2 ");
+            if (aTens == bTens) {
+                System.out.println(aTens + " разряд-2 ");
             }
-            if (aUnits == bUnits) {
-                System.out.println(aUnits + " разряд-3 ");
+            if (aOnes == bOnes) {
+                System.out.println(aOnes + " разряд-3 ");
             }
         }
 
@@ -102,17 +102,15 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int deposit = 301000;
-        int payoutPercent;
-        if (deposit < 100000) {
-            payoutPercent = 105;
-        } else if ((deposit >= 100000) && (deposit <= 300000)) {
-            payoutPercent = 107;
-        } else {
-            payoutPercent = 110;
+        int payoutPercent = 5;
+        if ((deposit >= 100000) && (deposit <= 300000)) {
+            payoutPercent = 7;
+        } else if (deposit > 300000) {
+            payoutPercent = 10;
         }
-        int totalSum = (deposit * payoutPercent) / 100;
-        int sumPercent = totalSum - deposit;
         System.out.println("Сумма вклада: " + deposit);
+        int totalSum = (deposit * (100 + payoutPercent)) / 100;
+        int sumPercent = totalSum - deposit;
         System.out.println("Сумма начисленного %: " + sumPercent);
         System.out.println("Итоговая сумма с %: " + totalSum);
 
@@ -120,7 +118,6 @@ public class IfElseStatementTheme {
         float historyPercent  = 59f;
         float programmingPercent = 92f;
         float historyGrade = 2;
-        float programmingGrade = 2;
         if ((historyPercent > 60) && (historyPercent <= 73)) {
             historyGrade = 3;
         } else if ((historyPercent > 73) && (historyPercent <= 91)) {
@@ -128,6 +125,7 @@ public class IfElseStatementTheme {
         } else if (historyPercent > 91) {
             historyGrade = 5;
         }
+        float programmingGrade = 2;
         if ((programmingPercent > 60) && (programmingPercent <= 73)) {
             programmingGrade = 3;
         } else if ((programmingPercent > 73) && (programmingPercent <= 91)) {
@@ -135,11 +133,11 @@ public class IfElseStatementTheme {
         } else if (programmingPercent > 91) {
             programmingGrade = 5;
         }
-        float everageEstimation = (historyGrade +  programmingGrade) / 2;
-        float everagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println("История: " + historyGrade);
         System.out.println("Программирование: " + programmingGrade);
-        System.out.println("Средний балл оценок по предметам: " + everageEstimation);
+        float everageGrade = (historyGrade +  programmingGrade) / 2;
+        System.out.println("Средний балл оценок по предметам: " + everageGrade);
+        float everagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println("Средний % по предметам: " + everagePercent);
         
         System.out.println("\n8. Рассчет годовой прибыли");
@@ -147,10 +145,11 @@ public class IfElseStatementTheme {
         int monthlyCostRent = 5000;
         int monthlyCostProduction = 9000;
         int totalAnnualProfit = (monthlyProfit - monthlyCostRent - monthlyCostProduction) * 12;
+        System.out.print("Чистая прибыль за год: ");
         if (totalAnnualProfit > 0) {
-            System.out.println("Чистая прибыль за год: " + "+" + totalAnnualProfit + " руб.");
+            System.out.print("+" + totalAnnualProfit + " руб.");
         } else {
-            System.out.println("Чистая прибыль за год: " + totalAnnualProfit + " руб.");
+            System.out.print(totalAnnualProfit + " руб.");
         }
     }
 }
