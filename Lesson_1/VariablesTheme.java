@@ -55,6 +55,7 @@ public class VariablesTheme {
         System.out.println(shortVariable);
         --shortVariable;
         System.out.println(shortVariable);
+        
         int intVariable = 2147483647;
         System.out.println("\nint");
         System.out.println(intVariable);
@@ -62,6 +63,7 @@ public class VariablesTheme {
         System.out.println(intVariable);
         --intVariable;
         System.out.println(intVariable);
+        
         long longVariable = 9223372036854775807l;
         System.out.println("\nlong");
         System.out.println(longVariable);
@@ -79,12 +81,14 @@ public class VariablesTheme {
         a = b;
         b = digit;
         System.out.println("\na=" + a + " b=" + b);
+        
         System.out.println("\nC помощью арифметических операций:");
         System.out.println("\na=" + a + " b=" + b);
         a += b;
         b = a - b;
         a -= b;
         System.out.println("\na=" + a + " b=" + b);
+        
         System.out.println("\nC помощью побитовой операции ^:");
         System.out.println("\na=" + a + " b=" + b);
         a ^= b;
@@ -93,36 +97,29 @@ public class VariablesTheme {
         System.out.println("\na=" + a + " b=" + b);
         
         System.out.println("\n6. Вывод символов и их кодов");
-        int codVariable1 = 36;
-        int codVariable2 = 42;
-        int codVariable3 = 64;
-        int codVariable4 = 124;
-        int codVariable5 = 126;
-        char symbolVariable1 = '$';
-        char symbolVariable2 = '*';
-        char symbolVariable3 = '@';
-        char symbolVariable4 = '|';
-        char symbolVariable5 = '~';
-        System.out.println(codVariable1 + " " + symbolVariable1);
-        System.out.println(codVariable2 + " " + symbolVariable2);
-        System.out.println(codVariable3 + " " + symbolVariable3);
-        System.out.println(codVariable4 + " " + symbolVariable4);
-        System.out.println(codVariable5 + " " + symbolVariable5);
+        char symbol1 = '$';
+        char symbol2 = '*';
+        char symbol3 = '@';
+        char symbol4 = '|';
+        char symbol5 = '~';
+        System.out.println((int) symbol1 + " " + symbol1);
+        System.out.println((int) symbol2 + " " + symbol2);
+        System.out.println((int) symbol3 + " " + symbol3);
+        System.out.println((int) symbol4 + " " + symbol4);
+        System.out.println((int) symbol5 + " " + symbol5);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
-        char symbolVariable6 = '/';
-        char symbolVariable7 = '\\';
-        char symbolVariable8 = '_';
-        char symbolVariable9 = '(';
-        char symbolVariable10 = ')';
-        System.out.println("    " + symbolVariable6 + symbolVariable7);
-        System.out.println("   " + symbolVariable6 + "  " +  symbolVariable7);
-        System.out.println("  " + symbolVariable6 + symbolVariable8 + symbolVariable9 + 
-                " " + symbolVariable10 + symbolVariable7);
-        System.out.println(" " + symbolVariable6 + "      " + symbolVariable7);
-        System.out.println("" + symbolVariable6 + symbolVariable8 + symbolVariable8 + 
-                symbolVariable8 + symbolVariable8 + symbolVariable6 + 
-                symbolVariable7 + symbolVariable8 + symbolVariable8 + symbolVariable7);
+        symbol1 = '/';
+        symbol2 = '\\';
+        symbol3 = '_';
+        symbol4 = '(';
+        symbol5 = ')';
+        System.out.println("    " + symbol1 + symbol2);
+        System.out.println("   " + symbol1 + "  " +  symbol2);
+        System.out.println("  " + symbol1 + symbol3 + symbol4 + " " +  symbol5 + symbol2);
+        System.out.println(" " + symbol1 + "      " + symbol2);
+        System.out.println("" + symbol1 + symbol3 + symbol3 + symbol3 + symbol3
+                 + symbol1 + symbol2 + symbol3 + symbol3 + symbol2);
 
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
         int number = 123;
