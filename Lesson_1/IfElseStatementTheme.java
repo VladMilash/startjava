@@ -108,15 +108,14 @@ public class IfElseStatementTheme {
         } else if (deposit > 300000) {
             payoutPercent = 10;
         }
-        System.out.println("Сумма вклада: " + deposit);
-        int totalSum = (deposit * (100 + payoutPercent)) / 100;
+        int totalSum = deposit + (deposit / 100 * payoutPercent);
         int sumPercent = totalSum - deposit;
+        System.out.println("Сумма вклада: " + deposit);
         System.out.println("Сумма начисленного %: " + sumPercent);
         System.out.println("Итоговая сумма с %: " + totalSum);
 
         System.out.println("\n7. Определение оценки по предметам");
         float historyPercent  = 59f;
-        float programmingPercent = 92f;
         float historyGrade = 2;
         if ((historyPercent > 60) && (historyPercent <= 73)) {
             historyGrade = 3;
@@ -125,6 +124,7 @@ public class IfElseStatementTheme {
         } else if (historyPercent > 91) {
             historyGrade = 5;
         }
+        float programmingPercent = 92f;
         float programmingGrade = 2;
         if ((programmingPercent > 60) && (programmingPercent <= 73)) {
             programmingGrade = 3;
@@ -133,12 +133,12 @@ public class IfElseStatementTheme {
         } else if (programmingPercent > 91) {
             programmingGrade = 5;
         }
+        float everagePercent = (historyPercent + programmingPercent) / 2;
+        float everageGrade = (historyGrade +  programmingGrade) / 2;
         System.out.println("История: " + historyGrade);
         System.out.println("Программирование: " + programmingGrade);
-        float everageGrade = (historyGrade +  programmingGrade) / 2;
-        System.out.println("Средний балл оценок по предметам: " + everageGrade);
-        float everagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println("Средний % по предметам: " + everagePercent);
+        System.out.println("Средний балл оценок по предметам: " + everageGrade);
         
         System.out.println("\n8. Рассчет годовой прибыли");
         int monthlyProfit = 13000;
