@@ -1,26 +1,20 @@
 public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("1. Вывод характеристик компьютера");
-        int ssd = 2; 
-        char ssd1 = 't';
-        char ssd2 = 'r';
-        char ssd3 = 's';
-        char ssd4 = 'd';
-        System.out.println("Объем жесткого диска: " + ssd + ssd1 + ssd2 + " " + ssd3 + ssd3 + ssd4);
-        short ram = 64;
-        char ram1 = 'g';
-        char ram2 = 'b';
-        System.out.println("Объем оперативной памяти: " + ram + ram1 + ram2);
-        long monitor = 3840l;
-        long monitor2 = 2160l;
-        char monitor3 = 'x';
-        System.out.println("Разрешение экрана: " + monitor + monitor3 + monitor2);
-        float weight = 4.5f;
-        System.out.println("Вес, кг: " + weight);
-        byte processor = 3;
-        System.out.println("Процессор: Intel Core i" + processor);
-        double frequency = 2.5d;
-        System.out.println("Частота процессора, ГГц: " + frequency);
+        int ssdSpace = 2; 
+        System.out.println("Объем жесткого диска, Тб: " + ssdSpace);
+        char ssdNumbers = '1';
+        System.out.println("Количество ssd: " + ssdNumbers);
+        short ramAmount = 64;
+        System.out.println("Объем оперативной памяти, Гб: " +  ramAmount);
+        long ramFrequency = 3200l;
+        System.out.println("Частота оперативной памяти, МГц: " +  ramFrequency);
+        float laptopWeight = 4.5f;
+        System.out.println("Вес, кг: " + laptopWeight);
+        byte processorType = 3;
+        System.out.println("Тип процессора: Intel Core i" + processorType);
+        double processorFrequency = 2.5d;
+        System.out.println("Частота процессора, ГГц: " + processorFrequency);
         boolean hasTouchCreen = false;
         System.out.println("Сенсорный экран: " + hasTouchCreen);
 
@@ -51,8 +45,8 @@ public class VariablesTheme {
         int intValue = 2147483647;
         System.out.println("int " + intValue + " " + ++intValue + " " + --intValue);
         
-        long longVariable = 9223372036854775807l;
-        System.out.println("long " + longVariable + " " + ++longVariable + " " + --longVariable);
+        long longValue = 9223372036854775807l;
+        System.out.println("long " + longValue + " " + ++longValue + " " + --longValue);
 
         System.out.println("\n5. Перестановка значений переменных");
         System.out.println("\nС помощью третьей переменной:");
@@ -113,17 +107,16 @@ public class VariablesTheme {
         System.out.println("  " + "сотен - " + hundreds);
         System.out.println("  " + "десятков - " + tens);
         System.out.println("  " + "единиц - " + ones);
-        int sumNumber = hundreds + tens + ones;
-        int compositionNumber = hundreds * tens * ones;
-        System.out.println("Сумма его цифр = " + sumNumber);
-        System.out.println("Произведение = " + compositionNumber);
+        int sumDigits = hundreds + tens + ones;
+        int compositionDigits = hundreds * tens * ones;
+        System.out.println("Сумма его цифр = " + sumDigits);
+        System.out.println("Произведение = " + compositionDigits);
 
         System.out.println("\n9. Вывод времени");
         int totalSeconds  = 86399;
-        int hours = totalSeconds / 3600;
-        int remainSeconds = totalSeconds % 3600;
-        int minutes = remainSeconds / 60;
-        int seconds = remainSeconds % 60;
-        System.out.println(hours + ":" + minutes + ":" + seconds);
+        int hh = totalSeconds / 3600;
+        int ss = totalSeconds % 60;
+        int mm = totalSeconds / 60 % 60;
+        System.out.println(hh + ":" + mm + ":" + ss);
     }
 }
