@@ -38,9 +38,9 @@ public class VariableNamesTheme {
         char symbol = '&';
         System.out.println("переменная хранит символ: " + symbol);
 
-        //код ощибки
+        //код ошибки
         int errorCode = 999;
-        System.out.println("код ощибки = " + errorCode);
+        System.out.println("код ошибки = " + errorCode);
 
         //тип сообщения
         char messageType = 'm';
@@ -141,8 +141,8 @@ public class VariableNamesTheme {
         System.out.println("пустое? = " + isEmpty);
 
         //(что-либо) активное?
-        boolean isAktive = true;
-        System.out.println("активное? = " + isAktive);
+        boolean isActive = true;
+        System.out.println("активное? = " + isActive);
 
         //новый?
         boolean isNew = true;
