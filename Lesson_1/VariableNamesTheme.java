@@ -159,8 +159,8 @@ public class VariableNamesTheme {
         System.out.println("\n3. Аббревиатуры");
 
         //старый universally unique identifier
-        int uuiOld = 555;
-        System.out.println("старый universally unique identifier: " + uuiOld);
+        int oldUuid = 555;
+        System.out.println("старый universally unique identifier: " + oldUuid);
 
         //производитель оперативной памяти
         String ramManufacturer ="microsoft";
@@ -175,16 +175,16 @@ public class VariableNamesTheme {
         System.out.println("протокол передачи гипертекста: " + http);
 
         //сокращенный uniform resource locator
-        String urlAbbreviated = "mv.com";
-        System.out.println("сокращенный uniform resource locator: " + urlAbbreviated);
+        String shortUrl = "mv.com";
+        System.out.println("сокращенный uniform resource locator: " + shortUrl);
 
         //новый идентификатор клиента
-        int idClientNew = 1212;
-        System.out.println("новый идентификатор клиента: " + idClientNew);
+        int newClientId = 1212;
+        System.out.println("новый идентификатор клиента: " + newClientId);
 
         //кодировка american standard code for information interchange
-        int asciiCode = 121212;
+        int ascii = 121212;
         System.out.println("кодировка american standard code for information interchange: " 
-                + asciiCode);
+                + ascii);
     }
 }

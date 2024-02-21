@@ -11,10 +11,10 @@ public class VariablesTheme {
         System.out.println("Частота оперативной памяти, МГц: " +  ramFrequency);
         float laptopWeight = 4.5f;
         System.out.println("Вес, кг: " + laptopWeight);
-        byte processorType = 3;
-        System.out.println("Тип процессора: Intel Core i" + processorType);
-        double processorFrequency = 2.5d;
-        System.out.println("Частота процессора, ГГц: " + processorFrequency);
+        byte cpuType = 3;
+        System.out.println("Тип процессора: Intel Core i" + cpuType);
+        double cpuFrequency = 2.5d;
+        System.out.println("Частота процессора, ГГц: " + cpuFrequency);
         boolean hasTouchCreen = false;
         System.out.println("Сенсорный экран: " + hasTouchCreen);
 
