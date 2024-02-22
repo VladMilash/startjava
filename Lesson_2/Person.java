@@ -7,18 +7,18 @@ public class Person {
     int age = 20;
 
     public void go() {
-        System.out.println("Идти");
+        System.out.println("Идет");
     }
 
     public void sit() {
-        System.out.println("Сидеть");
+        System.out.println("Сидит");
     }
 
     public void run() {
-        System.out.println("Бежать");
+        System.out.println("Бежит");
     }
 
     public void speak() {
-        System.out.println("Говорить");
+        System.out.println("Говорит");
     }
 }
