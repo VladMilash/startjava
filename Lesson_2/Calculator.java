@@ -66,6 +66,7 @@ public class Calculator {
         }
         System.out.println(a + " " + sign + " " + b + " " + "=" + " " + result);
     }
+    
     public void stop() {
             System.out.println("Программа завершена. Всего доброго!");
         }    
