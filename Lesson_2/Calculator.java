@@ -1,40 +1,20 @@
 public class Calculator {
 
-    private float a;
-    private float b;
+    private int a;
+    private int b;
     private char sign;
-    private float result;
+    private int result;
 
-    public float getA() {
-        return a;
-    }
-
-    public void setA(float a) {
+    public void setA(int a) {
         this.a = a;
     }
 
-    public float getB() {
-        return b;
-    }
-
-    public void setB(float b) {
+    public void setB(int b) {
         this.b = b;
-    }
-
-    public char getSign() {
-        return sign;
     }
 
     public void setSign(char sign) {
         this.sign = sign;
-    }
-
-    public float getResult() {
-        return result;
-    }
-
-    public void setResult(float result) {
-        this.result = result;
     }
 
     public void calculete() {
@@ -57,17 +37,13 @@ public class Calculator {
             case '^':
                 result = 1;
                 for (int i = 0; i < b; i++) {
-                result *= a;
+                    result *= a;
                 }   
                 break;
             default:
                 System.out.println("Ошибка: недопустимый знак операции.");
-                break;             
+                return;             
         }
         System.out.println(a + " " + sign + " " + b + " " + "=" + " " + result);
     }
-    
-    public void stop() {
-            System.out.println("Программа завершена. Всего доброго!");
-        }    
 }
