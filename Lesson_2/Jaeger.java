@@ -45,9 +45,12 @@ public class Jaeger {
         this.armor = armor;
     }
 
+    {
+        count++;
+    }
+
     public Jaeger() {
         System.out.println("Создан новый робот");
-        count++;
     }
 
     public Jaeger(String nickname, String mark, int height, int weight, 
@@ -60,7 +63,6 @@ public class Jaeger {
         this.speed = speed;
         this.strength = strength;
         this.armor = armor;
-        count++;
     }
 
     public void go() {
