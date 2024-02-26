@@ -35,7 +35,7 @@ public class GuessNumber {
             System.out.println("Победил " + player1.getName());
             } else if(player1Number > computerNumber) {
                 System.out.println("Ваше число больше того, которое загадал компьютер");
-            } else if(player1Number < computerNumber) {
+            } else {
                 System.out.println("Ваше число меньше того, которое загадал компьютер");
             }
             if(player1Number != computerNumber) {
@@ -45,7 +45,7 @@ public class GuessNumber {
                     System.out.println("Победил " + player2.getName());
                 } else if(player2Number > computerNumber) {
                     System.out.println("Ваше число больше того, которое загадал компьютер");
-                } else if(player2Number < computerNumber) {
+                } else {
                     System.out.println("Ваше число меньше того, которое загадал компьютер");
                 }
             }
