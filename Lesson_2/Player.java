@@ -1,15 +1,13 @@
+import java.util.Scanner;
+
 public class Player {
     
     private String name;
+    static private int count;
 
-    public Player () {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Player(Scanner scanner) {
+        count++;
+        System.out.println("Введите имя игрока " + count);
+        this.name = scanner.nextLine();
     }
 }
