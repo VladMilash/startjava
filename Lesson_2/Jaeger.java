@@ -7,7 +7,25 @@ public class Jaeger {
     private int speed;
     private int strength;
     private int armor;
-    static int count = 0;
+    static int count;
+
+    public Jaeger() {
+        System.out.println("Создан новый робот");
+        count++;
+    }
+
+    public Jaeger(String nickname, String mark, int height, int weight, 
+            int speed, int strength, int armor) {
+        System.out.println("Создан новый робот");
+        this.nickname = nickname;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+        this.speed = speed;
+        this.strength = strength;
+        this.armor = armor;
+        count++;
+    }
 
     public String getNickname() {
         return nickname;
@@ -42,26 +60,6 @@ public class Jaeger {
     }
 
     public void setArmor(int armor) {
-        this.armor = armor;
-    }
-
-    {
-        count++;
-    }
-
-    public Jaeger() {
-        System.out.println("Создан новый робот");
-    }
-
-    public Jaeger(String nickname, String mark, int height, int weight, 
-                int speed, int strength, int armor) {
-        System.out.println("Создан новый робот");
-        this.nickname = nickname;
-        this.mark = mark;
-        this.height = height;
-        this.weight = weight;
-        this.speed = speed;
-        this.strength = strength;
         this.armor = armor;
     }
 

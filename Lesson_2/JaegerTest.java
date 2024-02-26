@@ -24,14 +24,14 @@ public class JaegerTest {
         minotavr.setArmor(armor);
 
         System.out.println("Его имя: " + minotavr.getNickname() + 
-                    ", его марка: " + minotavr.getMark());
+                ", его марка: " + minotavr.getMark());
         
         minotavr.guard();
         minotavr.go();
 
         Jaeger scout = new Jaeger("Scout", "m-222", 4, 30, 25, 30, 10);
         System.out.println("Его имя: " + scout.getNickname() + 
-                    ", его марка: " + scout.getMark());
+                ", его марка: " + scout.getMark());
 
         scout.hide();
         scout.run();
