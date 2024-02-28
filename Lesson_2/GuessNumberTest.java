@@ -5,13 +5,12 @@ public class GuessNumberTest {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите имя первого игрока: ");
-        String player1Name = scanner.next();
+        String playerName = scanner.next();
+        Player player1 = new Player(playerName);
 
         System.out.println("Введите имя второго игрока: ");
-        String player2Name = scanner.next();
-        
-        Player player1 = new Player(player1Name);
-        Player player2 = new Player(player2Name);
+        playerName = scanner.next();
+        Player player2 = new Player(playerName);
         
         GuessNumber game = new GuessNumber(player1, player2);
         
