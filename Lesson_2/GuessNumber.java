@@ -16,18 +16,26 @@ public class GuessNumber {
     public void play() {
         Random random = new Random();
 
-        int computerNumber = (random.nextInt(101) + 1);
-        int playerNumber = 0;
+        int secretNum = (random.nextInt(101) + 1);
+        int playerNum = 0;
+        int moveСounter = 0;
+        Player playersSwitch = player1; 
         
-        while(playerNumber != computerNumber) {
-            System.out.println("Каждый игрок вводит число по очереди. Введите число:");
-            playerNumber = scanner.nextInt();
-            if(playerNumber > computerNumber) {
+        while(playerNum != secretNum) {
+            if(moveСounter % 2 == 0) {
+                playersSwitch = player1;
+            } else {
+                playersSwitch = player2;
+            }
+            System.out.println("Игрок " + playersSwitch.getName() + ", ведите число:");
+            playerNum = scanner.nextInt();
+            moveСounter++;
+            if(playerNum > secretNum) {
                 System.out.println("Ваше число больше того, которое загадал компьютер");
             } else {
                 System.out.println("Ваше число меньше того, которое загадал компьютер");
             }
         } 
-        System.out.println("Ура!!! Вы победили!!!");    
+        System.out.println("Игрок " + playersSwitch.getName() + ", Вы победили!!!");    
     }
 }
