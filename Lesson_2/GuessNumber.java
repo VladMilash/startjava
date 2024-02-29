@@ -17,10 +17,10 @@ public class GuessNumber {
 
         int secretNum = (random.nextInt(101) + 1);
         int playerNum = 0;
-        Player currentPlayer = null; 
+        Player currentPlayer = player2; 
         
         while(playerNum != secretNum) {
-            if((currentPlayer == null) || (currentPlayer == player2)) {
+            if(currentPlayer == player2) {
                 currentPlayer = player1;
             } else {
                 currentPlayer = player2;
