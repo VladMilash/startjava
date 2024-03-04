@@ -43,8 +43,7 @@ public class RpsGameFormatting {
         String sign = ROCK;
         if (position >= 66) {
             sign = PAPER;
-        }
-        else if (position >= 33) {
+        } else if (position >= 33) {
             sign = SCISSORS;
         }
         return sign;
@@ -64,8 +63,8 @@ public class RpsGameFormatting {
     
     private static void defineWinner(String name1, String sign1, String name2, String sign2) {
         if (sign1.equals(sign2)) {
-        System.out.println("\nПобедила дружба!");
-        return;
+            System.out.println("\nПобедила дружба!");
+            return;
         }
 
         boolean isName1Equal = sign1.equals(ROCK) && sign2.equals(SCISSORS) ||
