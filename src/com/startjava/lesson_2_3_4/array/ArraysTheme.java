@@ -46,8 +46,9 @@ public class ArraysTheme {
         System.out.println("\n\n3. Удаление элементов массива");
         Random random = new Random();
         double[] arrayNum = new double[15];
+        int lenght = arrayNum.length;
         System.out.println("Исходный массив:");
-        for (int i = 0; i < arrayNum.length; i++) {
+        for (int i = 0; i < lenght; i++) {
             arrayNum[i] = random.nextDouble();
             System.out.printf("%.3f ", arrayNum[i]);
             if (i == 7) {
@@ -55,9 +56,9 @@ public class ArraysTheme {
             }
         }
         System.out.println("\nИзмененный массив:");
-        double middleСell = arrayNum[(arrayNum.length - 1) / 2];
+        double middleСell = arrayNum[(lenght - 1) / 2];
         int counterZeroedCells = 0;
-        for (int i = 0; i < arrayNum.length; i++) {
+        for (int i = 0; i < lenght; i++) {
             if (arrayNum[i] > middleСell) {
                 arrayNum[i] = 0;
                 counterZeroedCells++;
@@ -73,16 +74,17 @@ public class ArraysTheme {
     public static void task4() {
         System.out.println("\n4. Вывод алфавита лесенкой");
         char[] arrayLetters = new char[26];
+        int lenght = arrayLetters.length;
         char firstLatter = 65;
-        for (int i = 0; i < arrayLetters.length; i++) {
+        for (int i = 0; i < lenght; i++) {
             arrayLetters[i] = firstLatter;
             firstLatter++;
         }
         int counterLines = 1;
         int counterOutputLetters = 0;
-        while (counterLines <= arrayLetters.length) {
+        while (counterLines <= lenght) {
             while (counterOutputLetters != counterLines) {
-                for (int i = arrayLetters.length - 1; counterOutputLetters != counterLines; i--) {
+                for (int i = lenght - 1; counterOutputLetters != counterLines; i--) {
                     System.out.print(arrayLetters[i]);
                     counterOutputLetters++;
                 }
