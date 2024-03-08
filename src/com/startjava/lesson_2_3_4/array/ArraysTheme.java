@@ -16,17 +16,13 @@ public class ArraysTheme {
         System.out.println("1. Реверс значений массива");
         int[] reverseNum = {2, 1, 3, 5, 4, 6, 7};
         System.out.print("До реверса: ");
-        for (int i : reverseNum) {
-            System.out.print(i);
-        }
+        printArray(reverseNum, true, false, true);
         System.out.print("\nПосле реверса: ");
-        for (int i = reverseNum.length - 1; i >= 0; i--) {
-            System.out.print(reverseNum[i]);
-        }
+        printArray(reverseNum, true, true, true);
     }
 
     public static void calculateFactorial() {
-        System.out.println("\n\n2. Вычисление факториала");
+        System.out.println("\n2. Вычисление факториала");
         int[] calculatedNum = new int[10];
         for (int i = 0; i < calculatedNum.length; i++) {
             calculatedNum[i] = i;
@@ -46,15 +42,12 @@ public class ArraysTheme {
         Random random = new Random();
         double[] originalNum = new double[15];
         int lenght = originalNum.length;
-        System.out.println("Исходный массив:");
         for (int i = 0; i < lenght; i++) {
             originalNum[i] = random.nextDouble();
-            System.out.printf("%.3f ", originalNum[i]);
-            if (i == 7) {
-                System.out.println();
-            }
         }
-        System.out.println("\nИзмененный массив:");
+        System.out.println("Исходный массив:");
+        printfArray(originalNum, "%.3f ", 8);
+
         double middleNum = originalNum[(lenght - 1) / 2];
         int counterZeroedCells = 0;
         for (int i = 0; i < lenght; i++) {
@@ -62,11 +55,10 @@ public class ArraysTheme {
                 originalNum[i] = 0;
                 counterZeroedCells++;
             }
-            System.out.printf("%.3f ", originalNum[i]);
-            if (i == 7) {
-                System.out.println();
-            }
         }
+        System.out.println("\nИзмененный массив:");
+        printfArray(originalNum, "%.3f ", 8);
+
         System.out.println("\nКоличество обнуленных ячеек = " + counterZeroedCells);
     }
 
@@ -114,11 +106,64 @@ public class ArraysTheme {
             uniqueNum[i] = randomNum;
         }
         Arrays.sort(uniqueNum);
-        int counterLines = 0;
-        for (int i : uniqueNum) {
-            System.out.print(i + " ");
-            counterLines++;
-            if (counterLines % 10 == 0) {
+        printfArray(uniqueNum, " %s", 10);
+    }
+
+    private static void printArray(int[] array, boolean isPrintBracket, boolean isReverseOutput, boolean isPrintComma) {
+        int lenght = array.length;
+        if (isPrintBracket) {
+            System.out.print("[");
+        }
+        if (!isReverseOutput) {
+            for (int i = 0; i < lenght; i++) {
+                System.out.print(array[i]);
+                if (isPrintComma) {
+                    if (i < lenght - 1) {
+                        System.out.print(", ");
+                    }
+                } else {
+                    if (i < lenght - 1) {
+                        System.out.print(" ");
+                    }
+                }
+            }
+        }
+        if (isReverseOutput) {
+            for (int i = lenght - 1; i >= 0; i--) {
+                System.out.print(array[i]);
+                if (isPrintComma) {
+                    if (i > 0) {
+                        System.out.print(", ");
+                    }
+                } else {
+                    if (i > 0) {
+                        System.out.print(" ");
+                    }
+                }
+            }
+        }
+        if (isPrintBracket) {
+            System.out.println("]");
+        }
+    }
+
+    private static void printfArray(double[] array, String format, int printLineElements) {
+        int counterOutputElements = 0;
+        for (int i = 0; i < array.length; i++) {
+            System.out.printf(format, array[i]);
+            counterOutputElements++;
+            if (counterOutputElements % printLineElements == 0) {
+                System.out.println();
+            }
+        }
+    }
+
+    private static void printfArray(int[] array, String format, int printLineElements) {
+        int counterOutputElements = 0;
+        for (int i = 0; i < array.length; i++) {
+            System.out.printf(format, array[i]);
+            counterOutputElements++;
+            if (counterOutputElements % printLineElements == 0) {
                 System.out.println();
             }
         }
