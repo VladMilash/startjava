@@ -1,69 +1,68 @@
 package com.startjava.lesson_2_3_4.array;
 
-import java.net.SocketOption;
 import java.util.Random;
 import java.util.Arrays;
 
 public class ArraysTheme {
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
+        reverseArray();
+        calculateFactorial();
+        removeArrayElements();
+        printAlphabetStaircase();
+        fillUniqueNumbersArray();
     }
 
-    public static void task1() {
+    public static void reverseArray() {
         System.out.println("1. Реверс значений массива");
-        int[] arrayNum = {2, 1, 3, 5, 4, 6, 7};
+        int[] reverseNum = {2, 1, 3, 5, 4, 6, 7};
         System.out.print("До реверса: ");
-        for (int i : arrayNum) {
+        for (int i : reverseNum) {
             System.out.print(i);
         }
         System.out.print("\nПосле реверса: ");
-        for (int i = arrayNum.length - 1; i >= 0; i--) {
-            System.out.print(arrayNum[i]);
+        for (int i = reverseNum.length - 1; i >= 0; i--) {
+            System.out.print(reverseNum[i]);
         }
     }
 
-    public static void task2() {
+    public static void calculateFactorial() {
         System.out.println("\n\n2. Вычисление факториала");
-        int[] arrayNum = new int[10];
-        for (int i = 0; i < arrayNum.length; i++) {
-            arrayNum[i] = i;
+        int[] calculatedNum = new int[10];
+        for (int i = 0; i < calculatedNum.length; i++) {
+            calculatedNum[i] = i;
         }
         int factorial = 1;
-        for (int i : arrayNum) {
+        for (int i : calculatedNum) {
             if ((i > 0) && (i <= 8)) {
-                factorial *= arrayNum[i];
+                factorial *= calculatedNum[i];
             }
-            System.out.print((i > 0 && i < 8) ? (arrayNum[i] + " * ")
-                    : (i == 8 ? arrayNum[i] + " = " + factorial : ""));
+            System.out.print((i > 0 && i < 8) ? (calculatedNum[i] + " * ")
+                    : (i == 8 ? calculatedNum[i] + " = " + factorial : ""));
         }
     }
 
-    public static void task3() {
+    public static void removeArrayElements() {
         System.out.println("\n\n3. Удаление элементов массива");
         Random random = new Random();
-        double[] arrayNum = new double[15];
-        int lenght = arrayNum.length;
+        double[] originalNum = new double[15];
+        int lenght = originalNum.length;
         System.out.println("Исходный массив:");
         for (int i = 0; i < lenght; i++) {
-            arrayNum[i] = random.nextDouble();
-            System.out.printf("%.3f ", arrayNum[i]);
+            originalNum[i] = random.nextDouble();
+            System.out.printf("%.3f ", originalNum[i]);
             if (i == 7) {
                 System.out.println();
             }
         }
         System.out.println("\nИзмененный массив:");
-        double middleСell = arrayNum[(lenght - 1) / 2];
+        double middleNum = originalNum[(lenght - 1) / 2];
         int counterZeroedCells = 0;
         for (int i = 0; i < lenght; i++) {
-            if (arrayNum[i] > middleСell) {
-                arrayNum[i] = 0;
+            if (originalNum[i] > middleNum) {
+                originalNum[i] = 0;
                 counterZeroedCells++;
             }
-            System.out.printf("%.3f ", arrayNum[i]);
+            System.out.printf("%.3f ", originalNum[i]);
             if (i == 7) {
                 System.out.println();
             }
@@ -71,13 +70,13 @@ public class ArraysTheme {
         System.out.println("\nКоличество обнуленных ячеек = " + counterZeroedCells);
     }
 
-    public static void task4() {
+    public static void printAlphabetStaircase() {
         System.out.println("\n4. Вывод алфавита лесенкой");
-        char[] arrayLetters = new char[26];
-        int lenght = arrayLetters.length;
+        char[] letters = new char[26];
+        int lenght = letters.length;
         char firstLatter = 65;
         for (int i = 0; i < lenght; i++) {
-            arrayLetters[i] = firstLatter;
+            letters[i] = firstLatter;
             firstLatter++;
         }
         int counterLines = 1;
@@ -85,7 +84,7 @@ public class ArraysTheme {
         while (counterLines <= lenght) {
             while (counterOutputLetters != counterLines) {
                 for (int i = lenght - 1; counterOutputLetters != counterLines; i--) {
-                    System.out.print(arrayLetters[i]);
+                    System.out.print(letters[i]);
                     counterOutputLetters++;
                 }
             }
@@ -95,28 +94,28 @@ public class ArraysTheme {
         }
     }
 
-    public static void task5() {
+    public static void fillUniqueNumbersArray() {
         System.out.println("\n5. Заполнение массива уникальными числами");
         Random random = new Random();
-        int[] arrayNum = new int[30];
+        int[] uniqueNum = new int[30];
         int randomNum;
         boolean isUnique;
-        for (int i = 0; i < arrayNum.length; i++) {
+        for (int i = 0; i < uniqueNum.length; i++) {
             do {
                 randomNum = random.nextInt(41) + 60;
                 isUnique = true;
                 for (int j = 0; j < i; j++) {
-                    if (arrayNum[j] == randomNum) {
+                    if (uniqueNum[j] == randomNum) {
                         isUnique = false;
                         break;
                     }
                 }
             } while (!isUnique);
-            arrayNum[i] = randomNum;
+            uniqueNum[i] = randomNum;
         }
-        Arrays.sort(arrayNum);
+        Arrays.sort(uniqueNum);
         int counterLines = 0;
-        for (int i : arrayNum) {
+        for (int i : uniqueNum) {
             System.out.print(i + " ");
             counterLines++;
             if (counterLines % 10 == 0) {
