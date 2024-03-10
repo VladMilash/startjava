@@ -25,12 +25,12 @@ public class ArraysTheme {
             integers[length - 1 - i] = temp;
         }
 
-        System.out.print("\nПосле реверса: ");
+        System.out.print("После реверса: ");
         printArray(integers);
     }
 
     private static void calculateFactorial() {
-        System.out.println("\n\n2. Вычисление факториала");
+        System.out.println("\n2. Вычисление факториала");
         int[] multipliers = new int[10];
         int length = multipliers.length;
         for (int i = 0; i < length; i++) {
@@ -70,7 +70,7 @@ public class ArraysTheme {
     }
 
     private static void printAlphabetStaircase() {
-        System.out.println("\n4. Вывод алфавита лесенкой");
+        System.out.print("\n4. Вывод алфавита лесенкой");
         char[] alphabetLetters = new char[26];
         int lenght = alphabetLetters.length;
         for (int i = 0; i < lenght; i++) {
