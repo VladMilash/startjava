@@ -9,7 +9,7 @@ public class ArraysTheme {
         calculateFactorial();
         removeArrayElements();
         printAlphabetStaircase();
-        fillUniqueNumbersArray();
+        fillArrayUniqueNums();
     }
 
     private static void reverseArray() {
@@ -18,30 +18,28 @@ public class ArraysTheme {
         System.out.print("До реверса: ");
         printArray(integers);
 
-        int leftIndex = 0;
-        int rightIndex = integers.length - 1;
-        while (leftIndex < rightIndex) {
-            int temp = integers[leftIndex];
-            integers[leftIndex] = integers[rightIndex];
-            integers[rightIndex] = temp;
-            leftIndex++;
-            rightIndex--;
+        int length = integers.length;
+        for (int i = 0; i < length / 2; i++) {
+            int temp = integers[i];
+            integers[i] = integers[length - 1 - i];
+            integers[length - 1 - i] = temp;
         }
+
         System.out.print("\nПосле реверса: ");
         printArray(integers);
     }
 
     private static void calculateFactorial() {
         System.out.println("\n\n2. Вычисление факториала");
-        int[] integers = new int[10];
-        int length = integers.length;
+        int[] multipliers = new int[10];
+        int length = multipliers.length;
         for (int i = 0; i < length; i++) {
-            integers[i] = i;
+            multipliers[i] = i;
         }
         int factorial = 1;
-        for (int i = 1; i <= length-2; i++) {
+        for (int i = 1; i < length - 1; i++) {
             factorial *= i;
-            System.out.print(integers[i]);
+            System.out.print(multipliers[i]);
             System.out.print(i < length - 2 ? " * " : " = " + factorial);
         }
     }
@@ -49,24 +47,24 @@ public class ArraysTheme {
     private static void removeArrayElements() {
         System.out.println("\n\n3. Удаление элементов массива");
         Random random = new Random();
-        double[] originalNums = new double[15];
-        int lenght = originalNums.length;
+        double[] randomNums = new double[15];
+        int lenght = randomNums.length;
         for (int i = 0; i < lenght; i++) {
-            originalNums[i] = random.nextDouble();
+            randomNums[i] = random.nextDouble();
         }
         System.out.println("Исходный массив:");
-        printfArray(originalNums, "%.3f ", 8);
+        printfArray(randomNums, "%.3f ", 8);
 
-        double middleNum = originalNums[(lenght - 1) / 2];
+        double middleNum = randomNums[(lenght - 1) / 2];
         int counterZeroedCells = 0;
         for (int i = 0; i < lenght; i++) {
-            if (originalNums[i] > middleNum) {
-                originalNums[i] = 0;
+            if (randomNums[i] > middleNum) {
+                randomNums[i] = 0;
                 counterZeroedCells++;
             }
         }
         System.out.println("\nИзмененный массив:");
-        printfArray(originalNums, "%.3f ", 8);
+        printfArray(randomNums, "%.3f ", 8);
 
         System.out.println("\nКоличество обнуленных ячеек = " + counterZeroedCells);
     }
@@ -78,22 +76,15 @@ public class ArraysTheme {
         for (int i = 0; i < lenght; i++) {
             alphabetLetters[i] = (char) ('A' + i);
         }
-        int counterLines = 1;
-        int counterOutputLetters = 0;
-        while (counterLines <= lenght) {
-            while (counterOutputLetters != counterLines) {
-                for (int i = lenght - 1; counterOutputLetters != counterLines; i--) {
-                    System.out.print(alphabetLetters[i]);
-                    counterOutputLetters++;
-                }
+        for (int i = 0; i <= lenght; i++) {
+            for (int j = lenght - 1; j >= lenght - i; j--) {
+                System.out.print(alphabetLetters[j]);
             }
             System.out.println();
-            counterLines++;
-            counterOutputLetters = 0;
         }
     }
 
-    private static void fillUniqueNumbersArray() {
+    private static void fillArrayUniqueNums() {
         System.out.println("\n5. Заполнение массива уникальными числами");
         Random random = new Random();
         int[] uniqueNums = new int[30];
@@ -117,9 +108,14 @@ public class ArraysTheme {
     }
 
     private static void printArray(int[] array) {
+        System.out.print("[");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
+            if (i <= array.length-2) {
+                System.out.print(", ");
+            }
         }
+        System.out.println("]");
     }
 
     private static void printfArray(double[] array, String format, int printLineElements) {
