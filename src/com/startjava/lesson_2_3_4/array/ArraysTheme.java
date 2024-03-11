@@ -71,14 +71,14 @@ public class ArraysTheme {
 
     private static void printAlphabetStaircase() {
         System.out.print("\n4. Вывод алфавита лесенкой");
-        char[] alphabetLetters = new char[26];
-        int lenght = alphabetLetters.length;
+        char[] alphabet = new char[26];
+        int lenght = alphabet.length;
         for (int i = 0; i < lenght; i++) {
-            alphabetLetters[i] = (char) ('A' + i);
+            alphabet[i] = (char) ('A' + i);
         }
         for (int i = 0; i <= lenght; i++) {
             for (int j = lenght - 1; j >= lenght - i; j--) {
-                System.out.print(alphabetLetters[j]);
+                System.out.print(alphabet[j]);
             }
             System.out.println();
         }
@@ -92,7 +92,7 @@ public class ArraysTheme {
         boolean isUnique;
         for (int i = 0; i < uniqueNums.length; i++) {
             do {
-                randomNum = random.nextInt(41) + 60;
+                randomNum = random.nextInt(41) + 59;
                 isUnique = true;
                 for (int j = 0; j < i; j++) {
                     if (uniqueNums[j] == randomNum) {
