@@ -8,31 +8,30 @@ public class CalculatorTest {
         Calculator calculatorOne = new Calculator();
         Scanner scanner = new Scanner(System.in);
         String choice;
-
         do {
-            System.out.println("Введите первое число:");
-            int a = scanner.nextInt();
-            calculatorOne.setA(a);
-
-            System.out.println("Введите знак математической операции:");
-            String input = scanner.next();
-            char sign = input.charAt(0);
-            calculatorOne.setSign(sign);
-
-            System.out.println("Введите второе число:");
-            int b = scanner.nextInt();
-            calculatorOne.setB(b);
+            System.out.print("Введите математическое выражение: ");
+            String mathExpression = scanner.nextLine();
+            calculatorOne.setMathExpression(mathExpression);
 
             calculatorOne.calculete();
-        
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
-            choice = scanner.next();
-            while(!choice.equals("yes") && !choice.equals("no")) {
-                System.out.println("Ведите нужное слово: [yes/no]:");
-                choice = scanner.next();
-            }
-        } while(!choice.equals("no"));
-        
+            choice = getUserChoice();
+
+        } while (!choice.equals("no"));
         System.out.println("Программа завершена. Всего доброго!");
+    }
+
+    private static String getUserChoice() {
+        String choice;
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            choice = scanner.nextLine();
+            if (choice.equals("yes") || choice.equals("no")) {
+                break;
+            } else {
+                System.out.println("Ведите нужное слово: [yes/no]:");
+            }
+        }
+        return choice;
     }
 }
