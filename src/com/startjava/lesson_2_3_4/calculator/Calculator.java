@@ -2,24 +2,23 @@ package com.startjava.lesson_2_3_4.calculator;
 
 import java.text.DecimalFormat;
 
-
 public class Calculator {
-    private String mathExpression;
 
-    public void setMathExpression(String mathExpression) {
-        this.mathExpression = mathExpression;
-    }
-
-    public void calculete() {
-        String[] mathExpressionArray;
-        mathExpressionArray = mathExpression.split(" ");
-        if (mathExpressionArray.length != 3) {
+    public double calculete(String mathExpression) {
+        String[] elements = mathExpression.split(" ");
+        if (elements.length != 3) {
             System.out.println("Ошибка: между цифрами и математическим знаком должен быть пробел");
-            return;
+            return Double.NaN;
         }
-        int a = Integer.parseInt(mathExpressionArray[0]);
-        int b = Integer.parseInt(mathExpressionArray[mathExpressionArray.length - 1]);
-        char sign = mathExpressionArray[1].charAt(0);
+        int a = Integer.parseInt(elements[0]);
+        int b = Integer.parseInt(elements[elements.length - 1]);
+        char sign = elements[1].charAt(0);
+
+        if ((sign != '+') && (sign != '-') && (sign != '*') && (sign != '/') && (sign != '%') && (sign != '^')) {
+            System.out.println("Ошибка: неверный математический знак");
+            return Double.NaN;
+        }
+
         double result;
 
         switch (sign) {
@@ -42,8 +41,7 @@ public class Calculator {
                 result = (double) Math.pow(a, b);
                 break;
             default:
-                System.out.println("Ошибка: знак " + sign + " не поддерживается");
-                return;
+                return Double.NaN;
         }
 
         System.out.print(a + " " + sign + " " + b + " = ");
@@ -54,5 +52,6 @@ public class Calculator {
             DecimalFormat format2 = new DecimalFormat("#.###");
             System.out.println(format2.format(result));
         }
+        return result;
     }
 }
