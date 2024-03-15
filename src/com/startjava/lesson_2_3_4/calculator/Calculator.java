@@ -15,27 +15,20 @@ public class Calculator {
 
         switch (sign) {
             case '+':
-                result = (double) a + b;
-                break;
+                return result = a + b;
             case '-':
-                result = (double) a - b;
-                break;
+                return result = a - b;
             case '*':
-                result = (double) a * b;
-                break;
+                return  result = a * b;
             case '/':
-                result = (double) a / b;
-                break;
+                return result = (double) a / b;
             case '%':
-                result = (double) a % b;
-                break;
+                return result = a % b;
             case '^':
-                result = (double) Math.pow(a, b);
-                break;
+                return result = Math.pow(a, b);
             default:
                 System.out.println("Ошибка: знак " + sign + " не поддерживается");
                 return Double.NaN;
         }
-        return result;
     }
 }

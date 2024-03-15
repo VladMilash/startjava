@@ -24,8 +24,11 @@ public class CalculatorTest {
 
     private static void outputResult(String mathExpression, double result) {
         System.out.print(mathExpression + " = ");
-        DecimalFormat format = (result % 1 == 0) ? new DecimalFormat("#") :
-                new DecimalFormat("#.###");
-        System.out.println(format.format(result));
+        if (Double.isNaN(result)) {
+            System.out.println("Ошибка. Результат не определен.");
+        } else {
+            DecimalFormat df = new DecimalFormat("#.###");
+            System.out.println(df.format(result));
+        }
     }
 }
