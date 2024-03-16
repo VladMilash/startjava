@@ -25,10 +25,9 @@ public class CalculatorTest {
     private static void outputResult(String mathExpression, double result) {
         System.out.print(mathExpression + " = ");
         if (Double.isNaN(result)) {
-            System.out.println("Ошибка. Результат не определен.");
+            System.out.println();
         } else {
-            DecimalFormat df = new DecimalFormat("#.###");
-            System.out.println(df.format(result));
+            System.out.println(new DecimalFormat("#.###").format(result));
         }
     }
 }
