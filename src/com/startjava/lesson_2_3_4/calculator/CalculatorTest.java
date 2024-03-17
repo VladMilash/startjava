@@ -16,7 +16,7 @@ public class CalculatorTest {
                 String mathExpression = scanner.nextLine();
                 outputResult(mathExpression, calculatorOne.calculete(mathExpression));
             }
-            System.out.println("Хотите продолжить вычисления? [yes/no]:");
+            System.out.println("\nХотите продолжить вычисления? [yes/no]:");
             choice = scanner.nextLine();
         } while (!choice.equals("no"));
         System.out.println("Программа завершена. Всего доброго!");
@@ -24,10 +24,8 @@ public class CalculatorTest {
 
     private static void outputResult(String mathExpression, double result) {
         System.out.print(mathExpression + " = ");
-        if (Double.isNaN(result)) {
-            System.out.println();
-        } else {
-            System.out.println(new DecimalFormat("#.###").format(result));
-        }
+            if (!Double.isNaN(result)) {
+                System.out.println(new DecimalFormat("#.###").format(result));
+            }
     }
 }
