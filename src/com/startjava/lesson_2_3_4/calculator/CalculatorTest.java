@@ -24,8 +24,8 @@ public class CalculatorTest {
 
     private static void outputResult(String mathExpression, double result) {
         System.out.print(mathExpression + " = ");
-            if (!Double.isNaN(result)) {
-                System.out.println(new DecimalFormat("#.###").format(result));
-            }
+        if (!Double.isNaN(result)) {
+            System.out.println(new DecimalFormat("#.###").format(result));
+        }
     }
 }
