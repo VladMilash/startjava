@@ -11,7 +11,7 @@ public class Player {
     public Player(String name) {
         this.name = name;
         this.nums = new int[10];
-        this.attempts = 0;
+        this.attempts = attempts;
     }
 
     public String getName() {
@@ -22,20 +22,16 @@ public class Player {
         return attempts;
     }
 
-    public void addNums(int number) {
+    public void addNum(int number) {
         nums[attempts] = number;
-    }
-
-    public void incrementAttempts() {
         attempts++;
     }
 
-    public int[] getImputNums(int attempts) {
-        int[] getImputNums = Arrays.copyOf(nums, attempts);
-        return getImputNums;
+    public int[] getEnteredNums() {
+        return Arrays.copyOf(nums, attempts);
     }
 
-    public void cleanNums() {
+    public void clear() {
         Arrays.fill(nums, 0, attempts, 0);
         attempts = 0;
     }

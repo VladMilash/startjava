@@ -8,9 +8,9 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
 
-    public GuessNumber(String playerName1, String playerName2) {
-        this.player1 = new Player(playerName1);
-        this.player2 = new Player(playerName2);
+    public GuessNumber(String name1, String name2) {
+        this.player1 = new Player(name1);
+        this.player2 = new Player(name2);
     }
 
     public void play() {
@@ -19,8 +19,8 @@ public class GuessNumber {
 
         int secretNum = (random.nextInt(100) + 1);
         int playerNum = 0;
-        player1.cleanNums();
-        player2.cleanNums();
+        player1.clear();
+        player2.clear();
 
         Player currentPlayer = player2;
         System.out.println("Игра началась! У каждого игрока есть по 10 попыток!");
@@ -29,19 +29,19 @@ public class GuessNumber {
             currentPlayer = (currentPlayer == player2) ? player1 : player2;
             System.out.println("Игрок " + currentPlayer.getName() + ", введите число:");
             playerNum = scanner.nextInt();
-            currentPlayer.addNums(playerNum);
-            currentPlayer.incrementAttempts();
+            currentPlayer.addNum(playerNum);
             if (playerNum == secretNum) {
-                System.out.println("Игрок " + currentPlayer.getName() + " угадал с " + currentPlayer.getAttempts() + " попытки");
+                System.out.println("Игрок " + currentPlayer.getName() + " угадал с "
+                        + currentPlayer.getAttempts() + " попытки");
                 break;
-            } else if (playerNum > secretNum) {
+            }
+            if (playerNum > secretNum) {
                 System.out.println("Ваше число больше того, которое загадал компьютер");
-            } else if (playerNum < secretNum) {
+            } else {
                 System.out.println("Ваше число меньше того, которое загадал компьютер");
             }
 
-            checkAttempts(player1);
-            checkAttempts(player2);
+            checkAttempts(currentPlayer);
             if (player1.getAttempts() == 10 && player2.getAttempts() == 10) {
                 System.out.println("У обоих игроков закончились попытки!");
                 break;
@@ -52,15 +52,15 @@ public class GuessNumber {
         printNums(player2);
     }
 
-    public void checkAttempts(Player player) {
-        if (player.getAttempts() == 10) {
-            System.out.println("У игрока: " + player.getName() + " закончились попытки");
+    public void checkAttempts(Player currentPlayer) {
+        if (currentPlayer.getAttempts() == 10) {
+            System.out.println("У игрока: " + currentPlayer.getName() + " закончились попытки");
         }
     }
 
     public void printNums(Player player) {
         System.out.print("Игрок " + player.getName() + " ввел следующие числа: ");
-        for (int i : player.getImputNums(player.getAttempts())) {
+        for (int i : player.getEnteredNums()) {
             System.out.print(i + " ");
         }
         System.out.println();
