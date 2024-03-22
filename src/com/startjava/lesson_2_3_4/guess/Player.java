@@ -11,7 +11,6 @@ public class Player {
     public Player(String name) {
         this.name = name;
         this.nums = new int[10];
-        this.attempts = attempts;
     }
 
     public String getName() {
