@@ -1,45 +1,45 @@
-\echo Р’СЃРµ СЂРѕР±РѕС‚С‹
+\echo Все роботы
 SELECT *
   FROM jaegers
  ORDER BY model_name;
 
-\echo Р РѕР±РѕС‚С‹, РєРѕС‚РѕСЂС‹С… РЅРµ СѓРЅРёС‡С‚РѕР¶РёР»Рё
+\echo Роботы, которых не уничтожили
 SELECT *
   FROM jaegers
  WHERE status = 'Active'
  ORDER BY model_name;
 
-\echo Р РѕР±РѕС‚С‹ mark-1 Рё mark-4
+\echo Роботы mark-1 и mark-4
 SELECT *
   FROM jaegers
  WHERE mark IN (1, 4)
  ORDER BY model_name;
 
-\echo Р’СЃРµ СЂРѕР±РѕС‚С‹, РєСЂРѕРјРµ mark-1 Рё mark-4
+\echo Все роботы, кроме mark-1 и mark-4
 SELECT *
   FROM jaegers
  WHERE mark NOT IN (1, 4)
  ORDER BY mark DESC;
 
-\echo РЎР°РјС‹Р№ СЃС‚Р°СЂС‹Р№ СЂРѕР±РѕС‚
+\echo Самый старый робот
 SELECT *
   FROM jaegers
  WHERE launch <= (SELECT MIN(launch)
                     FROM jaegers)
  ORDER BY model_name;
 
- \echo Р РѕР±РѕС‚С‹, РєРѕС‚РѕСЂС‹Рµ СѓРЅРёС‡С‚РѕР¶РёР»Рё Р±РѕР»СЊС€Рµ РІСЃРµС… kaiju
+ \echo Роботы, которые уничтожили больше всех kaiju
 SELECT model_name, mark, launch, kaiju_kill
   FROM jaegers
  WHERE kaiju_kill >= (SELECT MAX(kaiju_kill)
                         FROM jaegers)
 ORDER BY model_name;
 
- \echo РЎСЂРµРґРЅРёР№ РІРµСЃ СЂРѕР±РѕС‚РѕРІ
+ \echo Средний вес роботов
  SELECT ROUND(AVG(weight), 3) AS avg_weight
    FROM jaegers;
 
-\echo РЈРІРµР»РёС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СѓР±РёС‚С‹С… kaiju РЅР° 1 Сѓ РЅРµ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… СЂРѕР±РѕС‚РѕРІ
+\echo Увеличение количества убитых kaiju на 1 у не уничтоженных роботов
 UPDATE jaegers
    SET kaiju_kill = kaiju_kill + 1
  WHERE status = 'Active';
@@ -48,7 +48,7 @@ SELECT *
   FROM jaegers
  ORDER BY model_name;
 
-\echo РЈРґР°Р»РµРЅРёРµ СѓРЅРёС‡С‚РѕР¶РµРЅРЅС‹С… СЂРѕР±РѕС‚РѕРІ
+\echo Удаление уничтоженных роботов
 DELETE FROM jaegers
  WHERE status = 'Destroyed';
 
